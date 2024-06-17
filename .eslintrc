@@ -1,0 +1,12 @@
+{
+  "extends": "@rocketseat/eslint-config/node",
+  "plugins": [
+    "simple-import-sort"
+  ],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": "warn",
+    "no-useless-constructor": "off",
+    "no-new": "off",
+    "simple-import-sort/imports": "error"
+  }
+}
