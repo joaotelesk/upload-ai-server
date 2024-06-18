@@ -1,16 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
-    "module": "Node16",
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "moduleResolution": "Node16",
+    "target": "ES2020",
+    "module": "CommonJS",
     "baseUrl": "./",
     "paths": {
       "@/*": [
-        "*"
+        "./src/*"
       ]
     },
+    "types": [
+      "vitest/globals"
+    ],
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
