@@ -1,12 +1,18 @@
 {
-  "extends": "@rocketseat/eslint-config/node",
+  "extends": [
+    "@rocketseat/eslint-config/node",
+  ],
   "plugins": [
-    "simple-import-sort"
+    "simple-import-sort",
+    "vitest-globals/recommended"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "no-useless-constructor": "off",
     "no-new": "off",
     "simple-import-sort/imports": "error"
+  },
+  "env": {
+    "vitest-globals/env": true
   }
 }
