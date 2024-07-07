@@ -4,15 +4,12 @@
   ],
   "plugins": [
     "simple-import-sort",
-    "vitest-globals/recommended"
+    "eslint-plugin-vitest-globals"
   ],
   "rules": {
     "@typescript-eslint/no-unused-vars": "warn",
     "no-useless-constructor": "off",
     "no-new": "off",
-    "simple-import-sort/imports": "error"
+    "simple-import-sort/imports": "error",
   },
-  "env": {
-    "vitest-globals/env": true
-  }
 }
