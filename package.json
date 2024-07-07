@@ -5,17 +5,24 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest run --dir src/use-cases",
+    "test:watch": "vitest --dir src/use-cases",
+    "test:create-prisma-environment": "cd prisma/vitest-environment-prisma && yarn link",
+    "test:setup": "yarn link vitest-environment-prisma",
+    "pretest:e2e": "run-s test:create-prisma-environment test:setup",
+    "test:e2e": "vitest run --dir src/controllers",
+    "test:e2e:watch": "vitest --dir src/controllers"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^20.14.2",
+    "@types/supertest": "^6.0.2",
     "eslint-plugin-simple-import-sort": "^12.1.0",
     "eslint-plugin-vitest-globals": "^1.5.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.7",
+    "supertest": "^7.0.0",
     "tsx": "^4.15.6",
     "typescript": "^5.4.5",
     "vite-tsconfig-paths": "^4.3.2",
@@ -23,6 +30,9 @@
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
-    "fastify": "^4.28.0"
+    "dotenv": "^16.4.5",
+    "fastify": "^4.28.0",
+    "yarn-run-all": "^3.1.1",
+    "zod": "^3.23.8"
   }
 }
