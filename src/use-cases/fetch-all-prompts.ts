@@ -7,7 +7,7 @@ interface FetchAllPromptsUseCaseResponse {
 }
 
 export class FetchAllPromptsUseCase {
-  constructor(private prompsRepository: PromptsRepository) { }
+  constructor(private prompsRepository: PromptsRepository) {}
 
   async execute(): Promise<FetchAllPromptsUseCaseResponse> {
     const prompts = await this.prompsRepository.findMany()
